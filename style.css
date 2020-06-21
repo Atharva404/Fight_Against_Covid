@@ -3,134 +3,217 @@ Authors: Atharva Gupta and Charan Vengatesh
 */
 
 * {
-    scroll-behavior: smooth;
-    
+  scroll-behavior: smooth;
+  
 }
- body {
-   margin: 0;
-   background-color: #EA526F;
-   font-family: 'Dosis',
-   sans-serif;
- }
- 
- html::-webkit-scrollbar {
-    display: none;
+body {
+ margin: 0;
+ background-color: #EA526F;
+ font-family: 'Dosis',
+ sans-serif;
 }
 
- nav{
-   background-color: #070600;
- }
+html::-webkit-scrollbar {
+  display: none;
+}
 
- .nav-content {
-   max-width: 400px;
-   margin: 0 auto;
-   background-color: #070600;
-   padding: 0 20px;
-   display: flex;
-   justify-content: space-between;
-  }
-  .fa {
-    padding: 20px;
-    font-size: 50px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
+nav{
+ background-color: #070600;
+}
+.container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 22px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
 
-  .nav-content a {
-    display: block;
-    font-size: 14px;
-    line-height: 44px;
-    text-decoration: none;
-    transition: all 0.3s;
-    color: #ffffff;
-  }
-  
-  .nav-content a:hover,
-  .nav-icon:hover,
-  .search-icon:hover {
-    opacity: 0.7;
-  }
-  
-  .nav-links {
-    width: 80%;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
-#green-bar {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 10px;
-  list-style-type: none;
+.container input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+#facts-l {
+  padding: 5px 20px;
+  font-size: 20px;
+  background-color: #F5CAC3;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: #EA526F;
+}
+#s {
+  background-color: #EA526F;
+  padding: 5px 20px;
+}
+#s h1 {
+  padding: 5px 20px;
+  color: #000;
+}
+#a h2 {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 30px;
+}
+#a {
+  background-color: #000;
+  padding: 5px 20px;
+}
+.container:hover input ~ .checkmark {
+background-color: #5299ea;
+}
+.container input:checked ~ .checkmark {
+background-color: #000;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+#style-check {
+background-color: #C0E8F9;
+padding: 5px 20px;
+text-shadow: bisque;
+font-size: 50px;
+position: relative;
+padding-bottom: 10px;
+margin-bottom: 10px;
+}
+.container .checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.nav-content {
+ max-width: 400px;
+ margin: 0 auto;
+ background-color: #070600;
+ padding: 0 20px;
+ display: flex;
+ justify-content: space-between;
+}
+.fa {
+  padding: 20px;
+  font-size: 50px;
+  width: 50px;
   text-align: center;
-  overflow: hidden;
-  font-weight: 500;
-  font-size: 15px;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.nav-content a {
+  display: block;
+  font-size: 14px;
+  line-height: 44px;
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #ffffff;
+}
+
+.nav-content a:hover,
+.nav-icon:hover,
+.search-icon:hover {
+  opacity: 0.7;
+}
+
+.nav-links {
+  width: 80%;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+#green-bar {
+background-color: #ffffff;
+margin: 0;
+padding: 10px;
+list-style-type: none;
+text-align: center;
+overflow: hidden;
+font-weight: 500;
+font-size: 15px;
 }
 
 #blue-bar {
-  background-color: #5299ea;
-  padding: 10px;
-  margin: 0;
-  list-style-type: none;
-  text-align: center;
-  font-weight: 500;
-  font-size: 15px;
-  overflow: hidden;
+background-color: #5299ea;
+padding: 10px;
+margin: 0;
+list-style-type: none;
+text-align: center;
+font-weight: 500;
+font-size: 15px;
+overflow: hidden;
 }
 
 
 #covid-pic{
-  width: -webkit-fill-available;
-  filter: brightness(50%);
-  margin: 0;
+width: -webkit-fill-available;
+filter: brightness(50%);
+margin: 0;
 }
 
 .insta-icon{
-  background-color: #EA526F;
-  color: #F7F7FF;
+background-color: #EA526F;
+color: #F7F7FF;
 }
 .github-icon{
-  background-color: #ddd;
-  color: #000000;
+background-color: #ddd;
+color: #000000;
 }
 
 #social-media-icons{
-  display: flex;
-  position: absolute;
-  width: -webkit-fill-available;
-  bottom: 0;
-  text-align: center;
-  padding: 30px;
-  margin: 0;
-  background-color: #070600;
+display: flex;
+position: absolute;
+width: -webkit-fill-available;
+bottom: 0;
+text-align: center;
+padding: 30px;
+margin: 0;
+background-color: #070600;
 }
 
 #about-text{
-  padding: 40px;
+padding: 40px;
 }
 
 #text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: typing 3.5s steps(40, end),
-  blink-caret .75s step-end infinite;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+overflow: hidden;
+white-space: nowrap;
+margin: 0 auto;
+letter-spacing: .15em;
+animation: typing 3.5s steps(40, end),
+blink-caret .75s step-end infinite;
 }
 /* The typing effect */
 @keyframes typing {
-  from {
-    width: 0
-  }
+from {
+  width: 0
+}
 
-  to {
-    width: 100%
-  }
+to {
+  width: 100%
+}
 }
